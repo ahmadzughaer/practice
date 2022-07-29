@@ -2,12 +2,14 @@ const button = document.querySelector('.button')
 const numberValue = document.querySelector('.counterText')
 
 class clickCounter {
-    counter = 0;
-    click() {
-        addEventListener('click', () => {
-            this.counter++;
-            numberValue.innerText = this.counter
-        })
+    constructor() {
+        let counter = 0;
+        this.click = () => {
+            addEventListener('click', () => {
+                counter++;
+                numberValue.innerText = counter
+            })
+        }
     }
 
 }
