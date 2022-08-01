@@ -3,20 +3,20 @@ const numberValue = document.querySelector('.counterText')
 
 class clickCounter {
     constructor() {
-        this.click();
-    }
-    click = (setCounter) => {
-        button.addEventListener('click', () => {
-            setCounter++;
-            numberValue.innerText = setCounter
-        })
-        return setCounter;
+        this.setCounter=0;
     }
     getNumberOfClicks = () => {
         console.log(this.setCounter)
     }
+    
+    click = () => {
+        button.addEventListener('click', () => {
+            numberValue.innerText = ++this.setCounter;
+            this.getNumberOfClicks();
+        })
+    }
+    
 }
 
 const newCounter = new clickCounter()
-newCounter.click(0)
-newCounter.getNumberOfClicks()
+newCounter.click()
